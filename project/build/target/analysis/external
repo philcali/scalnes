@@ -1,0 +1,4 @@
+#External Dependencies
+#Wed Mar 31 12:17:46 CDT 2010
+/Users/philipcali/personal/scalnes/project/boot/scala-2.7.4/sbt-0.4.5/sbt_2.7.4-0.4.5.jar=src/Scalnes.scala
+/Users/philipcali/personal/scalnes/project/boot/scala-2.7.4/lib/scala-library.jar=src/Scalnes.scala

@@ -1,4 +1,4 @@
-package calico.scalnes
+package scalnes
 
 import java.io.{FileInputStream, File}
 import java.awt.image.BufferedImage
@@ -101,26 +101,18 @@ class BankSegment(val data: Array[Byte], val horizontal: Boolean) {
         val color = new Color(v, v, v)
         rtn += color.getRGB
       }
-      bi.setRGB((8 * column),(8 * row), 8, 8, rtn.toArray,0,8)
+      bi.setRGB((8 * column),(8 * row), 8, 8, rtn.toArray, 0, 8)
     }
     ImageIO.write(bi, "gif", new File(filename))
   }
 }
 
-// I want it to work this way:
-// nes process >> "out.gif"
-// nes process 0 >> "out.gif"
-// nes process 0 until 3 >> "out.gif"
-// nes process 0 tiles 0 until 32 >> "out.gif"
-// nes process 0 until 8 tiles 16 until 74 >> "out.gif"
-
 object Scalnes {
   def main(args: Array[String]) {
     if (args.size == 0) {
-      println("provide me a .nes file")
-      exit(0)
+      throw new IllegalArgumentException("provide me a .nes file")
     }
     val nes = NES load args(0)
-    nes.process(0) >> ("all.gif")
+    nes.process >> ("all.gif")
   }
 }

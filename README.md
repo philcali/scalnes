@@ -38,4 +38,7 @@ nes_rom.process(15) tiles(446 to 526) horizontally >> "game_fonts.gif"
 
 I've created a binary you can download just to try it out.
 
-
+```
+wget https://github.com/philcali/scalnes/raw/master/scalnes.jar
+java -jar scalnes.jar /path/to/game.nes
+```
